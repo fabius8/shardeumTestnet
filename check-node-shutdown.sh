@@ -10,5 +10,10 @@ while true; do
     else
         echo "节点正常."
     fi
+    if [[ $NODE_STATE == "active" ]]; then
+        echo "节点已经激活，关机！"
+        sleep 3600
+        shutdown -t 5
+    fi 
     sleep 60
 done
